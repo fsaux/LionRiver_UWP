@@ -1,0 +1,55 @@
+﻿<Page
+    x:Class="LionRiver.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    
+    xmlns:map="using:MapControl"
+    
+    mc:Ignorable="d">
+
+    <Page.Resources>
+
+        <map:TileLayerCollection x:Key="TileLayers">
+            
+            <map:TileLayer SourceName="OpenStreetMap"
+                           Description="Maps © [OpenStreetMap Contributors](http://www.openstreetmap.org/copyright)"
+                           MaxZoomLevel="19">
+                <map:TileSource UriFormat="http://{c}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
+            </map:TileLayer>
+            <map:TileLayer SourceName="Seamarks" Description="© OpenSeaMap Contributors"
+                           MinZoomLevel="10" MaxZoomLevel="18">
+                <map:TileSource UriFormat="http://tiles.openseamap.org/seamark/{z}/{x}/{y}.png"/>
+            </map:TileLayer>
+            <map:TileLayer SourceName="SHN"
+                           Description="Servicio de Hidrografia Naval"
+                           MaxZoomLevel="17">
+                <map:TileSource UriFormat="file:\\C:\{z}\{x}\{v}.png"
+/>
+            </map:TileLayer>
+
+        </map:TileLayerCollection>
+        
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <CommandBar>
+            <AppBarToggleButton Icon="Contact" Label="LongStringWithoutUsingSoftHyphens" IsChecked="False"/>
+        </CommandBar>
+
+        <map:Map Grid.Row="1" x:Name="map"
+                  MinZoomLevel="1" ZoomLevel="3" ManipulationMode="All">
+            <map:Map.Center>
+                <map:Location Latitude="-34" Longitude="-58"/>
+            </map:Map.Center>
+
+        </map:Map>
+
+    </Grid>
+</Page>
