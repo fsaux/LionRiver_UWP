@@ -27,23 +27,32 @@ namespace LionRiver
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private TileLayer layer1 = new TileLayer
+        MapTileLayer MapLayer3 = new MapTileLayer
         {
-            SourceName = "OSM",
-            TileSource = new TileSource { UriFormat = "http://{c}.tile.openstreetmap.org/{z}/{x}/{y}.png" }
+            SourceName = "openstreetmap",
+            TileSource = new TileSource
+            {
+                UriFormat = "http://{c}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            }
         };
 
-        private TileLayer layer2 = new TileLayer
-        {
-            SourceName = "SHN",
-            TileSource = new TileSource { }
-        };
+        //private TileLayer layer1 = new TileLayer
+        //{
+        //    SourceName = "OSM",
+        //    TileSource = new TileSource { UriFormat = "http://{c}.tile.openstreetmap.org/{z}/{x}/{y}.png" }
+        //};
 
-        private TileLayer layer3 = new TileLayer
-        {
-            SourceName = "Local",
-            TileSource = new TileSource { UriFormat = "http://192.168.1.100:8080/{z}/{x}/{v}.png" }
-        };
+        //private TileLayer layer2 = new TileLayer
+        //{
+        //    SourceName = "SHN",
+        //    TileSource = new TileSource { }
+        //};
+
+        //private TileLayer layer3 = new TileLayer
+        //{
+        //    SourceName = "Local",
+        //    TileSource = new TileSource { UriFormat = "http://192.168.1.100:8080/{z}/{x}/{v}.png" }
+        //};
 
         public MainPage()
         {
@@ -57,9 +66,9 @@ namespace LionRiver
 
 
             //layer2.TileSource.UriFormat = "file:///C:/SHN/{z}/{x}/{v}.png";
-            layer2.TileSource.UriFormat = "ms-appx:///Assets/Maps/{z}/{x}/{v}.png";
+            //layer2.TileSource.UriFormat = "ms-appx:///Assets/Maps/{z}/{x}/{v}.png";
 
-            map.TileLayers.Add(layer3);
+            map.Children.Add(MapLayer3);
 
         }
     }

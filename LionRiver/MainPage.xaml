@@ -11,25 +11,6 @@
 
     <Page.Resources>
 
-        <map:TileLayerCollection x:Key="TileLayers">
-            
-            <map:TileLayer SourceName="OpenStreetMap"
-                           Description="Maps © [OpenStreetMap Contributors](http://www.openstreetmap.org/copyright)"
-                           MaxZoomLevel="19">
-                <map:TileSource UriFormat="http://{c}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
-            </map:TileLayer>
-            <map:TileLayer SourceName="Seamarks" Description="© OpenSeaMap Contributors"
-                           MinZoomLevel="10" MaxZoomLevel="18">
-                <map:TileSource UriFormat="http://tiles.openseamap.org/seamark/{z}/{x}/{y}.png"/>
-            </map:TileLayer>
-            <map:TileLayer SourceName="SHN"
-                           Description="Servicio de Hidrografia Naval"
-                           MaxZoomLevel="17">
-                <map:TileSource UriFormat="file:\\C:\{z}\{x}\{v}.png"
-/>
-            </map:TileLayer>
-
-        </map:TileLayerCollection>
         
     </Page.Resources>
 
